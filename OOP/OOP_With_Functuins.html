@@ -8,10 +8,18 @@
 <h1>OOP with JS Functions</h1>
 
 <script>
-    function hello(){
-        console.log("Hello there");
-    }
-    hello();
+    //declarations
+    // function hello(){
+    //     console.log("Hello there");
+    // }
+    // hello();
+
+    //expression
+   //  var test= function(){
+   //      console.log("Expresssion");
+   //      return 10;
+   //  }
+   // let number= test();
 
     //Function Base Objects
     // function Company(){
@@ -35,18 +43,96 @@
 
     //what is the speciality with Function Base Objects.?
 
-    function Customer(id,name,address,salary){
-        this.id=id;
-        this.name=name;
-        this.address=address;
-        this.salary=salary;
-    }
+    // function Customer(id,name,address,salary){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.address=address;
+    //     this.salary=salary;
+    // }
     //so because of this object create with a function,
     //we have an option to pass parameters. so it's a feature
-    //we can use it as a constructor
+    //we can use it as a constructor to pass values to objects
 
-    var c1= new Customer("C001","Iman","Galle",100000);
-    console.log(c1);
+    // var c1= new Customer("C001","Iman","Galle",100000);
+
+    //also this will help us to create new objects easily
+    // var c2= new Customer("C002","Ushan","Galle",200000);
+    // var c3= new Customer("C003","Ashan","Galle",300000);
+    //
+    // console.log(c1);
+    // console.log(c2);
+    // console.log(c3);
+
+
+    // what about methods inside this object.?
+    // function Customer(id,name,address,salary){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.address=address;
+    //     this.salary=salary;
+    //
+    //     this.getID=function(){
+    //         return this.id;
+    //     }
+    //     this.setID=function (id){
+    //         this.id=id;
+    //     }
+    // }
+    //you should write down methods as expression inside Function base objects
+
+    //so to invoke a method
+    // var c1 = new Customer("C001","Dasun","Galle",1000);
+    // c1.getID();
+    // c1.setID("C002");
+    // c1.getID();
+
+
+    //Let's make customer object fully encapsulated
+    function Customer(id,name,address,salary){
+        let __id=id;
+        let __name=name;
+        let __address=address;
+        let __salary=salary;
+
+        this.getID=function(){
+            return __id;
+        }
+        this.setID=function (id){
+            __id=id;
+        }
+        this.getName=function(){
+            return __name;
+        }
+        this.setName=function (name){
+            __name=name;
+        }
+        this.getAddress=function(){
+            return __address;
+        }
+        this.setAddress=function (address){
+            __address=address;
+        }
+        this.getSalary=function(){
+            return __salary;
+        }
+        this.setSalary=function (salary){
+            __salary=salary;
+        }
+    }
+    //__name means these properties are absolutely private
+
+    let c=new Customer("C0012","Ramal","Galle",1000);
+    c.getID();
+    c.setID("C003");
+
+    // c.id; //cannot access
+    //So js is supporting for encapsulation
+
+    //So then what about inheritance
+
+
+
+
 
 </script>
 </body>
