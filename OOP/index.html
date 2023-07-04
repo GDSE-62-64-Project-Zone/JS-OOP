@@ -100,6 +100,35 @@
 
 
     //ENUMERABLE
+    //Remove the property from the countable state, and add some kind of hiding
+    Object.defineProperty(company,'name',{
+        enumerable: false
+    });
+
+    Object.getOwnPropertyDescriptor(company,"name");
+    // {
+    //     configurable:true,
+    //     enumerable:false,//now this is false
+    //     value:"Galle",
+    //     writable:true
+    // }
+
+    Object.keys(company);
+    //['address', 'tp', 'foundYear', 'monthlyIncome'] // no name key
+
+    for(var i in company){
+        console.log(i);
+    }
+    // VM1251:2 address
+    // VM1251:2 tp
+    // VM1251:2 foundYear
+    // VM1251:2 monthlyIncome
+    //here also no name key
+
+
+    //but if you know the property key name then you can still access it
+    company.name
+    //'IJSE'
 
 
 
