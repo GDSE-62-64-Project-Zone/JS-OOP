@@ -260,14 +260,15 @@
     Object.getOwnPropertyDescriptor(company, "monthlyIncome");
     // {enumerable: false, configurable: false, get: ƒ, set: ƒ}
 
+
     //Let's crete another accessor property changing the default values of
     // writable and enumerable
-    Object.defineProperty(company, 'anualIncome', {
+    Object.defineProperty(company, 'annualIncome', {
         get() {
-            return anualIncome;
+            return annualIncome;
         },
         set(v) {
-            anualIncome = v;
+            annualIncome = v;
         },
         configurable: true,
         enumerable: true,
@@ -279,14 +280,14 @@
     company.anualIncome = 300;
     // 300
 
-    company.anualIncome
+    company.annualIncome;
     // 300
 
-    Object.getOwnPropertyDescriptor(company, 'anualIncome');
+    Object.getOwnPropertyDescriptor(company, 'annualIncome');
     // {enumerable: true, configurable: true, get: ƒ, set: ƒ}
 
     Object.keys(company);
-    // ['name', 'address', 'tp', 'foundYear', 'anualIncome']
+    // ['name', 'address', 'tp', 'foundYear', 'annualIncome']
 
 
 </script>
