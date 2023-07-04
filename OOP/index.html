@@ -69,6 +69,7 @@
     //     writable:true
     // }
 
+    //WRITABLE
     //So can we change these descriptors as we want
     //yes this is how to do it
     Object.defineProperty(company,'name',{
@@ -92,6 +93,13 @@
         writable: true
     });
     //yes this is fine no problem at all
+    //But still the name property is visible
+    //Still name property can delete
+
+    //So how to manage them.?
+
+
+    //ENUMERABLE
 
 
 
