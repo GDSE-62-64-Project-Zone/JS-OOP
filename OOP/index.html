@@ -83,6 +83,16 @@
     // }
 
     //So what will happen with this to name.?
+    company.name="GDSE";
+    company.name;//will print IJSE
+    //Ok now we can see name value is final. we can't change it again
+
+    //what if we want to reverse this case again back to normal. can we do it.?
+    Object.defineProperty(company,'name',{
+        writable: true
+    });
+    //yes this is fine no problem at all
+
 
 
 </script>
