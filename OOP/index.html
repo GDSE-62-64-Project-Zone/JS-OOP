@@ -28,7 +28,7 @@
         address:"Galle",
         tp:"077123456",
         foundYear:"2004",
-        monthlyIncome:1000
+        monthlyIncome:100
     }
 
     company.id;
@@ -38,13 +38,52 @@
     Object.keys(company);
 
     //second method
-    for(var i in company){
-        console.log(i);
-    }
+    // for(var i in company){
+    //     console.log(i);
+    // }
 
 
     //can we delete a property of an object
-    delete company.name; //yes
+    // delete company.name; //yes
+
+
+    //how to change a value of an object property
+    // company.foundYear="2005";
+
+
+//Property Descriptors
+//Enumerable
+//Configurable
+//Writable
+// value
+
+    //So how to check those property descriptors for a object property
+    // Object.getOwnPropertyDescriptor(); // here we can use this method
+
+    Object.getOwnPropertyDescriptor(company,'address'); //will return the address property descriptors
+    Object.getOwnPropertyDescriptor(company,'name');//will return the name property descriptors
+    // {
+    //     configurable:true,
+    //     enumerable:true,
+    //     value:"Galle",
+    //     writable:true
+    // }
+
+    //So can we change these descriptors as we want
+    //yes this is how to do it
+    Object.defineProperty(company,'name',{
+        writable: false
+    });
+    Object.getOwnPropertyDescriptor(company,'name');
+    // {
+    //     configurable:true,
+    //     enumerable:true,
+    //     value:"Galle",
+    //     writable:false //now this is false
+    // }
+
+    //So what will happen with this to name.?
+
 
 </script>
 </body>
