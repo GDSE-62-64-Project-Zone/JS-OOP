@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects with Functions</title>
+</head>
+<body>
+<h1>OOP with JS Functions</h1>
+
+<script>
+
+    //So then what about inheritance
+    //JS is supporting for inheritance.?
+    //Yes, But with a use of prototype
+
+    //So what are prototypes?
+    //Prototypes are objects which is automatically defined with objects to maintain the inheritance hierarchy
+    //in js
+
+    //What are the properties which involving in inheritance hierarchy
+    //prototype. (include inside all functions)
+    //__proto__ (includes in every Object and Functions)
+    //constructor (inside the prototype)
+
+    //So what is the usage of prototype property
+    //As I mentioned earlier this property is inside the functions, and it's the
+    //link to its prototype object
+
+    //__proto__
+    //This can find inside every object and functions, this property will help you to find out
+    //what is the direct link of inheritance to the object or function
+
+    //Constructor
+    //This property which is inside the prototype object is used to relink its function
+    //when you are inside a prototype this property will help you to finds its function
+
+
+    function Vehicle(make,year){
+        this.make=make;
+        this.year=year;
+        this.park=function(){
+            console.log(`${this.make}-${this.year} is Parking`)
+        }
+    }
+    function BMW(make,year){
+
+    }
+
+    var v= new Vehicle("Vehicle","2022")
+    v.park();
+
+    var bmw = new BMW("BMW C001","2023");
+    bmw.park();
+
+
+
+
+</script>
+</body>
+</html>
