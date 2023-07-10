@@ -18,34 +18,55 @@
     // let v1= new Vehicle("BMW");
 
 
-class Animal{
-    constructor(name,method) {
-        //instant properties
-        this.name=name;
-        this.method=method;
-    }
-    //methods
-    cry(){
-        console.log(`${this.name} is ${this.method}`);
-    }
-}
-
-class Dog extends Animal{
-    constructor(name,method) {
-        super(name,method);
-    }
-}
-
-let a1=new Animal("Cat","Meow");
-a1.cry();
-
-let d1= new Dog("Harold","Barking");
-d1.cry();
+// class Animal{
+//     constructor(name,method) {
+//         //instant properties
+//         this.name=name;
+//         this.method=method;
+//     }
+//     //methods
+//     cry(){
+//         console.log(`${this.name} is ${this.method}`);
+//     }
+// }
+//
+// class Dog extends Animal{
+//     constructor(name,method) {
+//         super(name,method);
+//     }
+// }
+//
+// let a1=new Animal("Cat","Meow");
+// a1.cry();
+//
+// let d1= new Dog("Harold","Barking");
+// d1.cry();
 
 //So, its now very easy to apply inheritance using js. but you should keep remember inside this prototype chain is still functioning
 //class is a js concept which introduce for us to reduce the complexity of the prototype chain
 
 
+    class Vehicle{
+        constructor(make,year) {
+            this.make=make;
+            this.year=year;
+        }
+        park(){
+            console.log(`${this.make}-${this.year} is Parking`);
+        }
+    }
+
+    class BMW extends Vehicle{
+        constructor(make,year) {
+            super(make,year);
+        }
+    }
+
+    let b1=new BMW("CD001","2022");
+    b1.park();
+
+    let b2=new BMW("CD002","2023");
+    b2.park()
 
 </script>
 </body>
