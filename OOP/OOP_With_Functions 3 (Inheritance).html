@@ -17,13 +17,18 @@
         }
     }
 
-    function Cat(){
-
+    function Cat(name,method){
+    Animal.apply(this,arguments);
     }
 
-    function Dog(){
-
+    function Dog(name,method){
+        Animal.apply(this,arguments);
     }
+
+    Cat.prototype.__proto__=Animal.prototype;
+    Dog.prototype.__proto__=Animal.prototype;
+
+    Animal.prototype.happyAnimal=true;
 
 
     var animal= new Animal("Animal","Cry");
@@ -37,7 +42,8 @@
 
     //after that you have to add property for all objects of Cats and Dogs
     //happyAnimal=true
-
+    console.log(lucy.happyAnimal);
+    console.log(harry.happyAnimal);
 </script>
 </body>
 </html>
