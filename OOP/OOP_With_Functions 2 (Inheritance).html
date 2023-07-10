@@ -43,19 +43,42 @@
         }
     }
     function BMW(make,year){
-        Vehicle.apply(this,arguments);
+        Vehicle.apply(this,arguments); //copy all the Vehicle properties to the BMW function
     }
 
+    //make bmw prototype into a subtype of Vehicle prototype
     BMW.prototype.__proto__=Vehicle.prototype;
+
 
     var v= new Vehicle("Vehicle","2022")
     v.park();
 
-
     var bmw = new BMW("BMW C001","2023");
     bmw.park();
 
+    //So we can check inheritance hierarchy is working properly or not
+    //Let's add some properties to the parent function Vehicle
+    Vehicle.prototype.vehicleTest='testingVehicle';
 
+    v.vehicleTest;//can access
+    console.log(v.vehicleTest)
+
+    // what about bmw.?
+    bmw.vehicleTest;//can access
+    console.log(bmw.vehicleTest)
+    //so that means after we added some properties to the super type vehicle we can
+    //access it from the subtype BMW
+
+    //So let's check the other side
+    BMW.prototype.bmwTest='testingBMW';
+    bmw.bmwTest; //can access
+    console.log(bmw.bmwTest)
+
+    // what about accessing this from the super type vehicle
+
+    v.bmwTest; //this is undefined. we cannot access subtype properties from the supertype because
+    //inheritance is not supporting something like that
+    console.log(v.bmwTest)
 
 
 </script>
