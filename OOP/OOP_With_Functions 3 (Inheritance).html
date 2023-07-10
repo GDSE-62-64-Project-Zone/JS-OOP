@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects with Functions</title>
+</head>
+<body>
+<h1>OOP with JS Functions</h1>
+
+<script>
+
+    function Animal(name,method){
+        this.name=name;
+        this.method=method;
+        this.cry=function (){
+            console.log(`The ${this.name} is ${this.method}`);
+        }
+    }
+
+    function Cat(){
+
+    }
+
+    function Dog(){
+
+    }
+
+
+    var animal= new Animal("Animal","Cry");
+    animal.cry();
+
+    var lucy= new Cat("Lucy","Meowing");
+    lucy.cry(); //should print as The Lucy is Meowing
+
+    var harry= new Dog("Harry","Barking");
+    harry.cry();//should print as The Harry is Barking
+
+    //after that you have to add property for all objects of Cats and Dogs
+    //happyAnimal=true
+
+</script>
+</body>
+</html>
