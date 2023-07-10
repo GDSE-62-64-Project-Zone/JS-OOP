@@ -43,11 +43,14 @@
         }
     }
     function BMW(make,year){
-
+        Vehicle.apply(this,arguments);
     }
+
+    BMW.prototype.__proto__=Vehicle.prototype;
 
     var v= new Vehicle("Vehicle","2022")
     v.park();
+
 
     var bmw = new BMW("BMW C001","2023");
     bmw.park();
