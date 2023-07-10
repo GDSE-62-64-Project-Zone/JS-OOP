@@ -9,7 +9,25 @@
 
 <script>
 
+    function Vehicle(name){
+        this.name=name;
+        this.test=function(){
+            console.log("Testing")
+        }
+    }
+    let v1= new Vehicle("BMW");
 
+
+class Animal{
+    constructor(name,method) {
+        this.name=name;
+        this.method=method;
+    }
+    testMethod(){
+        console.log("test method invoke")
+    }
+}
+let a1=new Animal("Cat","Meow");
 
 
 </script>
