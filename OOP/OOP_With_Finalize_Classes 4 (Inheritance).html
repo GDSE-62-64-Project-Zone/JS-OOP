@@ -68,6 +68,27 @@
     let b2=new BMW("CD002","2023");
     b2.park()
 
+
+    //how to create private variables in js Classes
+    class Customer{
+        #id;
+        #name;
+        #address;
+        #salary;
+        constructor(id,name,address,salary) {
+            this.#id=id;
+            this.#name=name;
+            this.#address=address;
+            this.#salary=salary;
+        }
+        getID(){
+            return this.#id;
+        }
+        setID(id){
+            this.#id=id;
+        }
+    }
+
 </script>
 </body>
 </html>
