@@ -9,25 +9,39 @@
 
 <script>
 
-    function Vehicle(name){
-        this.name=name;
-        this.test=function(){
-            console.log("Testing")
-        }
-    }
-    let v1= new Vehicle("BMW");
+    // function Vehicle(name){
+    //     this.name=name;
+    //     this.test=function(){
+    //         console.log("Testing")
+    //     }
+    // }
+    // let v1= new Vehicle("BMW");
 
 
 class Animal{
     constructor(name,method) {
+        //instant properties
         this.name=name;
         this.method=method;
     }
-    testMethod(){
-        console.log("test method invoke")
+    //methods
+    cry(){
+        console.log(`${this.name} is ${this.method}`);
     }
 }
+
+class Dog extends Animal{
+    constructor(name,method) {
+        super(name,method);
+    }
+}
+
 let a1=new Animal("Cat","Meow");
+a1.cry();
+
+let d1= new Dog("Harold","Barking");
+d1.cry();
+
 
 
 </script>
